@@ -2,6 +2,8 @@
 // Gerado pelo Workr Lite CMS — não editar manualmente.
 export const siteConfig = {
 
+  // Ligado via Painel de Controle (super_admin) — quando true, page.js
+  // mostra só uma tela de aviso e não inicializa o resto do site.
   maintenance: false,
 
   company: {
@@ -28,7 +30,9 @@ export const siteConfig = {
   ticker: {
     type:      "iframe",
     iframeUrl: "",
-    items: [],
+    items: [
+      { symbol: 'WRLT3', price: 'R$ 00,00', change: '0,00%', direction: 'up' }
+    ],
   },
 
   nav: [
@@ -50,52 +54,81 @@ export const siteConfig = {
   ],
 
   empresas: [
-    { id: 'principal', label: "Fingage", short: 'F' },
+    { id: "principal-1785263312217", label: "Fingage", short: "F" }
   ],
 
-  supabase: {
-    url:      "https://mmhuwlpsgnvoxyuofliq.supabase.co",
-    anonKey:  "sb_publishable_BBSPbQc2kZngiK45ecfXaA_X4NANiGj",
-    portalId: "98f1e725-2375-4910-95ac-55f2463b783e",
-  },
-
   header: { variant: 'banner' },
-
-  seo: {
-    title:             "Fingage",
-    description:       "Site RI",
-    googleAnalyticsId: "",
-    clarityId:         "",
-  },
-
-  contact: {
-    email: "d.sousa@astri.solutions",
-  },
 
   languages: ["pt-BR","en","es"],
 
   topbar: {
-    ri: { label: 'Relações com Investidores', url: '/' },
-    institucional: { label: 'Institucional', url: '#' },
+    ri: { label: "Relações com Investidores", url: "/" },
+    institucional: { label: "Institucional", url: "#" },
     showTicker: true,
   },
 
   restrictedNav: [],
 
   footer: {
-    variant:   'simple',
-    address:   "",
-    email:     "",
-    phone:     "",
-    hours:     "",
-    copyright: "©Copyright Fingage 2026",
+    variant: "full",
+    model: "completo",
+    email: "",
+    content: {"pt-BR":{"address":"","phone":"","hours":"","copyright":"©Copyright Fingage 2026","disclaimer":"As informações contidas neste site são de caráter meramente informativo e não constituem oferta de valores mobiliários."}},
     social: { linkedin: "#", instagram: "#", facebook: "#" },
     legalLinks: [
       { label: "Termos e Condições", href: "/termos-e-condicoes.html" },
       { label: "Política de Privacidade", href: "/politica-de-privacidade.html" },
       { label: "Definições de Cookies", href: "/definicao-de-cookies.html" }
     ],
-    legalText: "As informações contidas neste site são de caráter meramente informativo e não constituem oferta de valores mobiliários.",
+  },
+
+  splash: {
+    enabled: false,
+    size: 'md',
+    titulo: '',
+    texto: '',
+    conteudo: '',
+    legenda: '',
+    buttons: [],
+  },
+
+  cookies: {
+    enabled: true,
+    layout: 'full',
+    theme: 'light',
+    title: 'Utilizamos cookies',
+    description: 'Usamos cookies para melhorar sua experiência.',
+    acceptLabel: 'Aceitar todos',
+    rejectLabel: 'Rejeitar',
+    showReject: true,
+    showCustomize: false,
+  },
+
+  errorPages: [],
+
+  banner: [
+    {
+      "id": "b1",
+      "imagem": null,
+      "content": {
+        "pt-BR": {
+          "cta": "Saiba mais",
+          "titulo": "Relações com Investidores TESTE",
+          "subtitulo": "Transparência e geração de valor para nossos acionistas."
+        }
+      }
+    }
+  ],
+
+  // Home hero shortcuts (Banner com navbar) — null = derive from siteConfig.nav.
+  home: {
+    shortcuts: null,
+  },
+
+  supabase: {
+    url:      "https://mmhuwlpsgnvoxyuofliq.supabase.co",
+    anonKey:  "sb_publishable_BBSPbQc2kZngiK45ecfXaA_X4NANiGj",
+    portalId: "98f1e725-2375-4910-95ac-55f2463b783e",
   },
 
 };
